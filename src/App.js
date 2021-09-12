@@ -12,6 +12,7 @@ const Not_Found = lazy(()=>import("./pages/not_found"));
 
 
 function App() { 
+  console.log("env",process.env)
   const [style,setStyle]=useState("light")
   function onChange(checked) {
     console.log(`switch to ${checked}`);

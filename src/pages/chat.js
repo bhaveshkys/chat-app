@@ -36,7 +36,7 @@ function Chat(props){
             axios.get(
                 "https://api.chatengine.io/users/me/",
                 {headers:{
-                    "project-id": 'c32d4ac2-e73a-40f4-ae49-929e0569380c',
+                    "project-id": process.env.REACT_APP_FIREBASE_CHAT_ENGINE_PROJECT_ID,
                     "user-name": user.email,
                     "user-secret": user.uid
                 }
@@ -52,7 +52,7 @@ function Chat(props){
                     axios.post(
                         'https://api.chatengine.io/users/',
                         formdata,
-                        {headers:{"private-key":'4e27b367-cfbc-4f09-a9d7-805c6d301a70'}}
+                        {headers:{"private-key":process.env.REACT_APP_FIREBASE_CHAT_ENGINE_PRIVATE_KEY}}
                     )
                     .then(()=> setLoading(false))
                     .catch(e=>{console.log('e',e.response)})
