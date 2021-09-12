@@ -12,17 +12,14 @@ const Not_Found = lazy(()=>import("./pages/not_found"));
 
 
 function App() { 
-  console.log("env",process.env)
   const [style,setStyle]=useState("light")
   function onChange(checked) {
-    console.log(`switch to ${checked}`);
     if(checked){
       setStyle("dark")
     }else if(!checked){
       setStyle("light")
     }
   }
-  console.log("style=",style)
   const{user}=useAuthlistener();
   return (
     <>

@@ -7,7 +7,6 @@ import { useHistory } from "react-router-dom";
 function Login() {
     const auth=getAuth();
     const {user}=useContext(UserContext);
-    console.log("user from user context",user)
     const history=useHistory();
     const handleOnclick=async (provider)=>{
          await socialMediaAuth(provider)
