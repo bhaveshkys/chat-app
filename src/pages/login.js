@@ -11,6 +11,7 @@ function Login() {
     const handleOnclick=async (provider)=>{
          await socialMediaAuth(provider)
     }
+    console.log(user);
     useEffect(()=>{
       if(user){
         history.push("/chat")
