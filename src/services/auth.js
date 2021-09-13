@@ -11,6 +11,8 @@ const socialMediaAuth=(provider)=>{
     }).catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+    console.log("error code",errorCode)
+    console.log("error message",errorMessage)
     const email = error.email;
     const credential = GoogleAuthProvider.credentialFromError(error);
     });

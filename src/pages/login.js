@@ -1,4 +1,4 @@
-import {getAuth ,signInWithRedirect,onAuthStateChanged} from "firebase/auth"
+import {getAuth} from "firebase/auth"
 import {googleProvider} from "../services/authmethod";
 import socialMediaAuth from "../services/auth";
 import UserContext from "../context/user";
@@ -14,6 +14,7 @@ function Login() {
     console.log(user);
     useEffect(()=>{
       if(user){
+        console.log("checking for user")
         history.push("/chat")
         return
       }
