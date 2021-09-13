@@ -19,7 +19,7 @@ function Chat(props){
     async function handlelogout(event){
         
         signOut(auth)
-        history.push("/login")
+        history.push("/")
     }
     async function getFile(url){
         let res = await fetch(url);
@@ -29,7 +29,7 @@ function Chat(props){
     useEffect(()=>{
         if(didMountRef.current){
             if(!user||user==null){
-                history.push("/login")
+                history.push("/")
                 return
             }
     
@@ -62,7 +62,7 @@ function Chat(props){
         } else{
             didMountRef.current=true
             if(!user||user==null){
-                history.push("/login")
+                history.push("/")
                 return
             }
         }

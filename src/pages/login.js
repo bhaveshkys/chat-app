@@ -13,7 +13,7 @@ function Login() {
     }
     useEffect(()=>{
       if(user){
-        history.push("/")
+        history.push("/chat")
         return
       }
     },[user,history])

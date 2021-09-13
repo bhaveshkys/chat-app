@@ -1,3 +1,3 @@
-export const CHAT ='/';
-export const LOGIN='/login';
+export const CHAT ='/chat';
+export const LOGIN='/';
 export const NOT_FOUND='/notfound';
