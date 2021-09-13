@@ -8,17 +8,27 @@ function Login() {
     const auth=getAuth();
     const {user}=useContext(UserContext);
     const history=useHistory();
+    const didMountRef=useRef(false);
     const handleOnclick=async (provider)=>{
          await socialMediaAuth(provider)
     }
     console.log(user);
     useEffect(()=>{
+     if(didMountRef.current){
       console.log("useeffect is called ,maybe?")
       if(user){
         console.log("checking for user")
         history.push("/chat")
         return
-      }
+     } else{
+      didMountRef.current=true
+      if(user){
+          history.push("/chat")
+          return
+      }}
+    }
+    
+      
     },[{user},history,auth])
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 py-12 px-4 sm:px-6 lg:px-8">
