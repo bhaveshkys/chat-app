@@ -13,12 +13,13 @@ function Login() {
     }
     console.log(user);
     useEffect(()=>{
+      console.log("useeffect is called ,maybe?")
       if(user){
         console.log("checking for user")
         history.push("/chat")
         return
       }
-    })
+    },[{user},history,auth])
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
