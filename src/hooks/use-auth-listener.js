@@ -10,11 +10,10 @@ export default function useAuthlistener(){
         const listener=onAuthStateChanged(auth,(authuser)=>{
             if(authuser){
                 setUser(authuser)
+                console.log(authuser)
                 
             }
-            else{
-                setUser(null);
-            }
+            
         });
         return ()=>listener()
     },[user,auth]);
