@@ -2,13 +2,12 @@ import {getAuth} from "firebase/auth"
 import {googleProvider} from "../services/authmethod";
 import socialMediaAuth from "../services/auth";
 import UserContext from "../context/user";
-import { useContext, useEffect,useRef } from "react";
+import { useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 function Login() {
   const auth=getAuth();
   const {user}=useContext(UserContext);
   const history=useHistory();
-  const didMountRef=useRef(false);
   const handleOnclick=async (provider)=>{
        await socialMediaAuth(provider)
     }
