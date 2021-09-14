@@ -5,6 +5,7 @@ const socialMediaAuth=(provider)=>{
     signInWithRedirect(auth, provider)
     .then((result) => {
     // The signed-in user info.
+    console.log("result",result)    
     return result
     
     // ...

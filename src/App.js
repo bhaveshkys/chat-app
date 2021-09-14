@@ -34,10 +34,10 @@ function App() {
         <Router>
           <Suspense fallback={<p>LOADING</p>}>
             <Switch>
+              <Route path={ROUTES.LOGIN} component={Login} exact/>
               <Route  path={ROUTES.CHAT}  render={(props)=>(
                 <Chat {...props} changetheme={theme=> onChange(theme)}/>
               )} exact/>
-              <Route path={ROUTES.LOGIN} component={Login} exact/>
               <Route component={Not_Found}/>
             </Switch>
           </Suspense>

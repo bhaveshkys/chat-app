@@ -8,6 +8,7 @@ export default function useAuthlistener(){
     const auth=getAuth();
     
     useEffect(()=>{
+        console.log("authlistener")
         const listener=onAuthStateChanged(auth,(authuser)=>{
             if(authuser){
                 setUser(authuser)
